@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Jersey+25&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:wght@900&display=swap");
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.clock {
+  position: relative;
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.time {
+  font-size: 3rem;
+  color: #fff;
+  font-family: "Jersey 25", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.date {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  font-family: "Jersey 25", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.greeting {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.greeting.show {
+  opacity: 1;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 600px) {
+  .time {
+    font-size: 2rem;
+  }
+
+  .date {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .time {
+    font-size: 2.5rem;
+  }
+
+  .date {
+    font-size: 1.4rem;
+  }
+}
+
+/* For larger screens like desktop PCs */
+@media only screen and (min-width: 1025px) {
+  .time {
+    font-size: 4rem;
+  }
+
+  .date {
+    font-size: 2rem;
+  }
+}
+
+/* Animation */
+body::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, slategray 50%, #000 50%);
+  z-index: -1;
+  animation: pulseAnimation 5s ease infinite;
+}
+
+@keyframes pulseAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}
